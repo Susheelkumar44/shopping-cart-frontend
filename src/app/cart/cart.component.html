@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-4" *ngFor="let cartProducts of cartProductDetails.products">
+      <div class="card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <br />
+                <img class="img" src="{{cartProducts.imageURL}}"
+                    style="height: 250px; width: 250px;" />
+              </div>
+            </div> <br />
+            <div class="row">
+              <div class="col-lg-4 col-12">
+                <blockquote class="blockquote">
+                <p class="mb-0"><span>{{cartProducts.productName}}</span></p>
+                </blockquote>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-12">
+                <span class="mb-0">Total Quantity: <strong>{{cartProducts.quantity}}</strong></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-4 col-12">
+                <span class="mb-0"><strong>SubTotal: {{cartProducts.subTotal|currency:'Rs.'}}</strong></span>
+              </div>
+            </div>
+
+          </div>
+          <div style="align-items: right;">
+            <div class="col-lg-4 col-12">
+              <span><button><i class="fas fa-minus" 
+                    (click)="onRemoveQuantity(cartProducts.productID, cartProducts.quantity)">
+                  </i></button></span> &nbsp;
+              <span><button><i class="fas fa-plus"
+                    (click)="onAddQuantity(cartProducts.productID, cartProducts.quantity)">
+                  </i></button></span>
+            </div>
+          </div>
+
+          <button class="btn btn-danger" style="margin-right: 0px; margin-left: 100px;"
+          (click) = "deleteProductFromCart(cartProducts.productID)"><i class="fas fa-trash"></i> Remove Product From
+            Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr />
+
+  <div class="row">
+    <div class="col-xs-12">
+      <span class="grandTotal" style="align-items: center;"><h3>GrandTotal:
+        {{cartProductDetails.grandTotal|currency:'Rs.'}}</h3></span>
+    </div>
+
+  </div>
+
+  <button class="btn btn-warning" style="margin: 2% 0 6% 23%;
+      width: 50%;
+      color: floralwhite;">Order</button>
+</div>

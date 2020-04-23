@@ -1,0 +1,47 @@
+.head{
+    color: black;
+}
+.fa-shopping-cart:before {
+    margin-right:10px;
+    content: "\f07a";
+    color: black;
+    font-size: 20px
+}
+
+.fa-wallet {
+    content: "\f07a";
+    color: darkred;
+    font-size: 20px
+}
+.fast-purse {
+    margin-left: 10px;
+}
+
+.header-search {
+    padding: 15px 0px;
+  }
+  
+  .header-search form {
+    position: relative;
+  }
+  
+  .header-search form .input-select {
+    margin-right: -4px;
+    border-radius: 40px 0px 0px 40px;
+  }
+  
+  .header-search form .input {
+    width: calc(100% - 260px);
+    margin-right: -4px;
+  }
+  
+  .header-search form .search-btn {
+    height: 40px;
+    width: 100px;
+    background: #D10024;
+    color: #FFF;
+    font-weight: 700;
+    border: none;
+    border-radius: 0px 40px 40px 0px;
+  }
+  

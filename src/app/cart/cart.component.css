@@ -1,0 +1,67 @@
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-left: 48px;
+}
+
+.fa {
+    border-style: solid;
+    border-width: thin;
+    border-spacing: 20px;
+    border-color: green;
+    
+}
+
+
+
+
+/* media Queries */
+
+@media only screen and (min-width:500px){
+    .img{
+        width:60%
+    }
+}
+
+@media only screen and (min-width:576px){
+    .img{
+        width:100%
+    }
+}
+
+@media only screen and (min-width:768px){
+    .img{
+        width:110%
+    }
+}
+.btn {
+    border-radius: 15.23rem;
+margin-left: 85px;
+margin-right: 10rem;
+
+  
+}
+
+.btn[_ngcontent-lco-c58]:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-left:70%;
+  
+  
+}
+
+.ImgButton {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  .grandTotal {
+    color: #D10024;
+    font-size: 18px;
+  }

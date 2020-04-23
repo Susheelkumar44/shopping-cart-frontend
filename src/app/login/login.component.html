@@ -1,0 +1,37 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="assets/images/download.png" id="icon" alt="User Icon" />
+      </div>
+       <p>
+         <strong [ngStyle] = "{color: getLoginStatusColor()}">{{loginStatus}}</strong>
+       </p> 
+      <!-- Login Form -->
+     <div class="form-row">
+        <form>
+          <br />
+          <div class = "Container center_div">
+              <label><i class="fa fa-envelope"></i>&nbsp;&nbsp;Email</label>
+                <input type="email"  class="form-control" name="email" placeholder="email" [(ngModel)] = "loginPostData.email" required> 
+              <label><i class="fa fa-key"></i>&nbsp;&nbsp;password</label>
+                <input type="password" class="form-control" name="password" placeholder="password" [(ngModel)] = "loginPostData.encryptedPassword" required> 
+              <p *ngIf="showPasswordValue">{{ loginPostData.encryptedPassword }}</p>
+              <button class="btn btn-link" [disabled] = "loginPostData.encryptedPassword === ''"
+                 (click) = "showPasswordValue = !showPasswordValue">Show Password</button> <br />
+              <input type="submit" class="btn btn-primary" value="Log In" [disabled] = "loginPostData.email === '' || loginPostData.encryptedPassword === ''"
+                 (click) = "sendUserData()"> 
+              <button class="btn btn-link" routerLink = "/signup">Don't have Account? Then Register</button> <br />
+          </div>
+        </form>
+      </div>
+      <!-- Remind Passowrd
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div> -->
+  
+  </div>
+ </div>

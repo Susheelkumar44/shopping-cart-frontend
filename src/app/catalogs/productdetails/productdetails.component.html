@@ -1,0 +1,106 @@
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <!-- Product main img -->
+            <div class="col-md-5 col-md-push-2">
+                <div id="product-main-img">
+                    <div class="product-preview">
+                        <img src="{{singleProductDetails.productImageLink}}" style="height: 450px; width: 400px;">
+                    </div>
+                </div>
+            </div>
+            <!-- /Product main img -->
+
+            <!-- Product thumb imgs -->
+            <div class="col-md-2  col-md-pull-3">
+                <!-- <div id="product-imgs">
+                    <div class="product-preview">
+                        <img src="./img/product01.png" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="./img/product03.png" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="./img/product06.png" alt="">
+                    </div>
+
+                    <div class="product-preview">
+                        <img src="./img/product08.png" alt="">
+                    </div>
+                </div> -->
+            </div>
+            <div class="col-md-5">
+                <div class="product-details">
+                    <h2 class="product-name">{{ singleProductDetails.productName }}</h2>
+                    <!-- <div>
+                        <div class="product-rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star-o"></i> 
+                        </div>
+                        <a class="review-link" href="#">10 Review(s) | Add your review</a> 
+                    </div> -->
+                    <div>
+                        <h3 class="product-price">{{singleProductDetails.price|currency:'Rs. '}} <!--<del class="product-old-price">$990.00</del>--></h3>
+                        <p *ngIf="Instock"><span class="product-available">In Stock</span></p>
+                        <p *ngIf="!Instock"><span class="product-unavailable">Out of Stock</span></p>
+                    </div>
+                    <p style="font-family: Montserrat; font-size: medium;">{{singleProductDetails.productDetails}}</p>
+
+                    <!-- <div class="product-options">
+                        <label>
+                            Size
+                            <select class="input-select">
+                                <option value="0">X</option>
+                            </select>
+                        </label>
+                        <label>
+                            Color
+                            <select class="input-select">
+                                <option value="0">Red</option>
+                            </select>
+                        </label>
+                    </div> -->
+
+                    <div class="add-to-cart">
+                        <!-- <div class="qty-label">
+                            Qty
+                            <div class="input-number">
+                                <input type="number">
+                                <span class="qty-up">+</span>
+                                <span class="qty-down">-</span>
+                            </div>
+                        </div> -->
+                        <button class="add-to-cart-btn" [disabled] ="!Instock" (click) = "addToCart(singleProductDetails)"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                    </div>
+
+                    <ul>
+                        <li style="font-size: 14px;"><h5>Manufacturered By:</h5> 
+                            {{singleProductDetails.manufacturer}}</li> <br />
+                        <li  style="font-size: 14px;"><h5>Delivered By:</h5> 
+                            {{singleProductDetails.distributor}}</li>
+                    </ul>
+
+                    <ul class="product-links">
+                        <li style="font-size: 14px;"><h5>Category: </h5></li>
+                        <li>{{singleProductDetails.category}}</li>
+                        <li>{{singleProductDetails.subCategory}}</li>
+                    </ul>
+
+                    <ul class="product-links">
+                        <li>Share:</li>
+                        <li><a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i></a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>

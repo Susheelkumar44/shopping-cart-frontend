@@ -1,0 +1,46 @@
+<nav class="navbar navbar-default" mdbStickyHeader>
+    <div class="container-fluid">
+        <div class="navbar-header navbar-left">
+            <a routerLink="/homepage" class="navbar-brand"><img src="assets/images/large_fastpurse1.png" class="img-circle"></a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" role="button">What do you want to Search?
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>Grocery</li>
+                        <li>Electronics</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="header-search">
+            <ul class="nav navbar-nav">
+                <li><input type = "text" class="form-control" placeholder="Search here" [(ngModel)] = "searchParameter"></li>
+                <li><button class="btn btn-primary"style="background-color: #D10024;" (click) = "onClick()"><i class="fas fa-search"></i></button></li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="nav-link" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
+                    <strong>Cart</strong></a></li>
+                <li *ngIf="!isUserLoggedIn"><a routerLink="/signin"><i class="fa fa-sign-in-alt"></i>
+                    &nbsp;<strong>Sign In</strong></a></li>&nbsp;&nbsp;
+                <li *ngIf="!isUserLoggedIn"><a routerLink="/signup"><i class="fa fa-user-plus"></i>
+                    &nbsp;<strong>Sign Up</strong></a></li>
+                <li *ngIf="isUserLoggedIn"><a routerLink="/userdetails"><i class="far fa-user-circle"></i>
+                        &nbsp;<strong>My Account</strong></a></li>
+                <li *ngIf="isUserLoggedIn"><button class="btn btn-link" (click)="logOut()"><i class="fas fa-sign-out-alt"></i>
+                    &nbsp;<strong>Log Out</strong></button></li>
+            </ul>
+            <!-- <ul class="nav navbar-nav navbar-right navbar-right"> 
+            <li><a class="nav-link" routerLink="#"><i class="fa fa-shopping-cart"></i>
+                <strong>Cart</strong></a></li>-->
+        
+            <!-- <li><i class="fa fa-shopping-cart"></i></li> -->
+        <!-- </ul> -->
+            </div>
+        </div>
+       
+    </div>
+</nav>
