@@ -4,7 +4,7 @@
       <div class="card shadow-lg p-3 mb-5 bg-white rounded">
         <div class="card-body">
 
-          <div class="container">
+          <!-- <div class="container"> -->
             <div class="row">
               <div class="col-12">
                 <br />
@@ -13,25 +13,34 @@
               </div>
             </div> <br />
             <div class="row">
-              <div class="col-lg-4 col-12">
+              <div class="col-12">
                 <blockquote class="blockquote">
                 <p class="mb-0"><span>{{cartProducts.productName}}</span></p>
                 </blockquote>
               </div>
             </div>
             <div class="row">
-              <div class="col-lg-4 col-12">
-                <span class="mb-0">Total Quantity: <strong>{{cartProducts.quantity}}</strong></span>
+              <div class="col-12">
+                <span class="mb-0">Total Quantity: 
+                  <span><button><i class="fas fa-minus" 
+                    (click)="onRemoveQuantity(cartProducts.productID, cartProducts.quantity)">
+                  </i></button></span> &nbsp;<strong>{{cartProducts.quantity}}</strong> &nbsp;
+                  <span><button><i class="fas fa-plus"
+                    (click)="onAddQuantity(cartProducts.productID, cartProducts.quantity)">
+                  </i></button></span>
+                </span>
               </div>
             </div>
+            <br/>
             <div class="row">
-              <div class="col-lg-4 col-12">
-                <span class="mb-0"><strong>SubTotal: {{cartProducts.subTotal|currency:'Rs.'}}</strong></span>
+              <div class="col-12">
+                <span class="mb-0">SubTotal: <strong>{{cartProducts.subTotal|currency:'Rs.'}}</strong></span>
               </div>
             </div>
 
-          </div>
-          <div style="align-items: right;">
+          <!-- </div> -->
+          
+          <!-- <div style="align-items: right;">
             <div class="col-lg-4 col-12">
               <span><button><i class="fas fa-minus" 
                     (click)="onRemoveQuantity(cartProducts.productID, cartProducts.quantity)">
@@ -40,8 +49,8 @@
                     (click)="onAddQuantity(cartProducts.productID, cartProducts.quantity)">
                   </i></button></span>
             </div>
-          </div>
-
+          </div> -->
+          <br />
           <button class="btn btn-danger" style="margin-right: 0px; margin-left: 100px;"
           (click) = "deleteProductFromCart(cartProducts.productID)"><i class="fas fa-trash"></i> Remove Product From
             Cart</button>
@@ -52,9 +61,9 @@
   <hr />
 
   <div class="row">
-    <div class="col-xs-12">
-      <span class="grandTotal" style="align-items: center;"><h3>GrandTotal:
-        {{cartProductDetails.grandTotal|currency:'Rs.'}}</h3></span>
+    <div class="col-xs-12" style="text-align: right;">
+      <span class="product-price" style="text-align: right;"><h3><strong>GrandTotal:
+        {{cartProductDetails.grandTotal|currency:'Rs.'}}</strong></h3></span>
     </div>
 
   </div>

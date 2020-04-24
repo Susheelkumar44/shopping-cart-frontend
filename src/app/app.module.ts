@@ -19,6 +19,8 @@ import { ProductdetailsComponent } from './catalogs/productdetails/productdetail
 import { ProductnamesearchComponent } from './catalogs/productnamesearch/productnamesearch.component';
 import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { UserprofileeditComponent } from './userdetails/userprofileedit/userprofileedit.component';
+import { DropdownDirective } from './customdirectives/dropdown.directive';
+import { SearchbycategoryComponent } from './catalogs/searchbycategory/searchbycategory.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { UserprofileeditComponent } from './userdetails/userprofileedit/userprof
     ProductdetailsComponent,
     ProductnamesearchComponent,
     UserdetailsComponent,
-    UserprofileeditComponent
+    UserprofileeditComponent,
+    DropdownDirective,
+    SearchbycategoryComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +55,8 @@ import { UserprofileeditComponent } from './userdetails/userprofileedit/userprof
       {path: "productdetails", component: ProductdetailsComponent},
       {path: "productnamesearch", component: ProductnamesearchComponent},
       {path: "userdetails", component: UserdetailsComponent},
-      {path: "edituserprofile", component: UserprofileeditComponent}
+      {path: "edituserprofile", component: UserprofileeditComponent},
+      {path: "searchbycategory", component: SearchbycategoryComponent}
     ])
   ],
   providers: [],
