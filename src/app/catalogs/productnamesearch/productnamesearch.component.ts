@@ -41,10 +41,20 @@ export class ProductnamesearchComponent /*implements OnInit*/{
       this.toastrservice.error("Log In to add to cart")
       this.router.navigate(['/signin'])
     }
-    this.cartservice.addToCart(selecteditem).subscribe((response) => {
+    this.cartservice.addToCart(selecteditem).subscribe(
+      (response) => {
       console.log("value ", response);
       //this.router.navigate(['/cart']);
       this.showSuccessOnAddingToCart()
+    },
+    (error) => {
+      console.log("error in adding to cart", error)
+      switch (error.status) {
+        case 409: this.toastrservice.warning(`Product Already in the Cart`)
+        //this.router.navigate(['/cart']);
+        break;
+        //ToDo: More sever error handling to come...
+      }
     })
   }
 

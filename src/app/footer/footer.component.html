@@ -9,13 +9,12 @@
                     <div class="col-md-6 col-xs-12">
                         <div class="footer">
                             <h3 class="footer-title">About Us</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                incididunt
-                                ut.</p>
+                            <p>We strive to have a positive impact on customers, employees, small businesses, the economy, and communities. Our people are smart, passionate builders with different backgrounds and goals, who share a common desire to always be learning and inventing on behalf of our customers.
+                                Supporting small business. Authors. In the community. Our innovations</p>
                             <ul class="footer-links">
-                                <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-                                <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-                                <li><a href="#"><i class="fa fa-envelope"></i> queryresponse@fastpurse.com</a></li>
+                                <li><a><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+                                <li><a><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+                                <li><a><i class="fa fa-envelope"></i> queryresponse@fastpurse.com</a></li>
                             </ul>
                         </div>
                     </div>
@@ -24,9 +23,12 @@
                         <div class="footer">
                             <h3 class="footer-title">Categories</h3>
                             <ul class="footer-links">
-                                <li><a href="#">Groceries</a></li>
-                                <li><a href="#">Laptops</a></li>
-                                <li><a href="#">Smartphones</a></li>
+                                <li><a routerLink = "/searchbycategory" [queryParams] = "{category: 'grocery'}" queryParamsHandling="merge">
+                                    Groceries</a></li>
+                                <li><a routerLink = "/searchbycategory" [queryParams] = "{category: 'electronics'}" queryParamsHandling="merge">
+                                    Laptops</a></li>
+                                <li><a routerLink = "/searchbycategory" [queryParams] = "{category: 'electronics'}" queryParamsHandling="merge">
+                                    Smartphones</a></li>
                                 <li><a href="#">Cameras</a></li>
                                 <li><a href="#">Accessories</a></li>
                             </ul>
@@ -39,8 +41,8 @@
                         <div class="footer">
                             <h3 class="footer-title">Information</h3>
                             <ul class="footer-links">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Contact Us</a></li>
+                                <li><a>About Us</a></li>
+                                <li><a>Contact Us</a></li>
                                 <li><a href="#">Privacy Policy</a></li>
                                 <li><a href="#">Orders and Returns</a></li>
                                 <li><a href="#">Terms & Conditions</a></li>

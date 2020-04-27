@@ -27,15 +27,15 @@
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
-                <li><a class="nav-link" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
+                <li role="presentation" routerLinkActive="true"><a class="nav-link" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
                     <strong>Cart</strong></a></li>
-                <li *ngIf="!isUserLoggedIn"><a routerLink="/signin"><i class="fa fa-sign-in-alt"></i>
+                <li *ngIf="!isUserLoggedIn" role="presentation" routerLinkActive="true"><a routerLink="/signin"><i class="fa fa-sign-in-alt"></i>
                     &nbsp;<strong>Sign In</strong></a></li>&nbsp;&nbsp;
-                <li *ngIf="!isUserLoggedIn"><a routerLink="/signup"><i class="fa fa-user-plus"></i>
+                <li *ngIf="!isUserLoggedIn" role="presentation" routerLinkActive="true"><a routerLink="/signup"><i class="fa fa-user-plus"></i>
                     &nbsp;<strong>Sign Up</strong></a></li>
-                <li *ngIf="isUserLoggedIn"><a routerLink="/userdetails"><i class="far fa-user-circle"></i>
+                <li *ngIf="isUserLoggedIn" role="presentation"><a routerLink="/userdetails"><i class="far fa-user-circle"></i>
                         &nbsp;<strong>My Account</strong></a></li>
-                <li *ngIf="isUserLoggedIn"><a routerLink="/homepage" (click)="logOut()"><i class="fas fa-sign-out-alt"></i>
+                <li *ngIf="isUserLoggedIn" role="presentation" routerLinkActive="true"><a routerLink="/homepage" (click)="logOut()"><i class="fas fa-sign-out-alt"></i>
                     &nbsp;<strong>Log Out</strong></a></li>
                 <!-- <li *ngIf="isUserLoggedIn"><button class="btn btn-link" (click)="logOut()"><i class="fas fa-sign-out-alt"></i>
                     &nbsp;<strong>Log Out</strong></button></li> -->
