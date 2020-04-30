@@ -3,56 +3,52 @@
         <h2 class="active" style="font-size: large;"> Edit Your Profile </h2> <br />
         <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <!-- <p>
-                <strong  style="font-family: Rockwell;" [ngStyle] = "
-                {color: getRegistrationStatusColor()}">{{registrationStatus}}</strong>
-            </p> <br /> -->
-            <form (ngSubmit) = "onUpdate()" #f="ngForm">
-                <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup">
+            <form [formGroup]="updateForms" (ngSubmit)="onSubmit()">
+                <!-- <div id="user-data" ngModelGroup="userData" #userData="ngModelGroup"> -->
                     <div class="form-group">
-                    <label for="Firstname"><i class="fa fa-user"></i>&nbsp;&nbsp;Firstname</label>
-                        <input type="text" id="firstname" class="form-control"
-                        ngModel name="firstName">
+                    <label for="Firstname"><i class="fa fa-user"></i>&nbsp;&nbsp;First Name</label>
+                        <input type="text" id="firstname" 
+                        formControlName="firstname" class="form-control">
+                        <!-- ngModel name="firstName"> -->
                     </div>
                     <div class="form-group">
-                        <label for="Lastname"><i class="fa fa-user"></i>&nbsp;&nbsp;Lastname</label>
-                            <input type="text" id="lastname" class="form-control"
-                            ngModel name="lastName">
+                        <label for="Lastname"><i class="fa fa-user"></i>&nbsp;&nbsp;Last Name</label>
+                            <input type="text" id="lastname" 
+                            formControlName="lastname" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="Phone Number"><i class="fas fa-phone"></i>&nbsp;&nbsp;Phone Number</label>
-                            <input type="text" id="phonenumber" class="form-control"
-                            ngModel name="phone">
+                            <input type="text" id="phonenumber" 
+                            formControlName="phonenumber" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="AddressLine"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;AddressLine</label>
-                            <input type="text" id="addressLine" class="form-control"
-                            ngModel name="addressLine">
+                        <label for="AddressLine"><i class="fas fa-map-marker-alt"></i>&nbsp;&nbsp;Address Line</label>
+                            <input type="text" id="addressLine" 
+                            formControlName="addressLine" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="City"><i class="fas fa-university"></i>&nbsp;&nbsp;City</label>
-                            <input type="text" id="city" class="form-control"
-                            ngModel name="city">
+                            <input type="text" id="city" 
+                            formControlName="city" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="State"><i class="fas fa-city"></i>&nbsp;&nbsp;State</label>
-                            <input type="text" id="state" class="form-control"
-                            ngModel name="state">
+                            <input type="text" id="state" 
+                            formControlName="state" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="Zip Code">zipcode</label>
-                            <input type="text" id="zipcode" class="form-control"
-                            ngModel name="zip">
+                        <label for="Zip Code">Zipcode</label>
+                            <input type="text" id="zipcode" 
+                            formControlName="zipcode" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="password"><i class="fa fa-key"></i>&nbsp;&nbsp;Password</label>
-                            <input type="password" id="password" class="form-control"
-                            ngModel name="encryptedPassword">
+                            <input type="password" id="password" 
+                            formControlName="password" class="form-control">
                     </div>
-                    <input type="submit" class="btn btn-primary" value="Edit Profile"
-                    [disabled] = "!f.valid"> <br />
+                    <input type="submit" class="btn btn-primary" value="Edit Profile"> <br />
                     <small class="form-text text-muted">Don't worry we won't share this data anywhere. We will keep it confidential</small>
-                </div>
+                <!-- </div> -->
             </form>
         </div>
         </div>

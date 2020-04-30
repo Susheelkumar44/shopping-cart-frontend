@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router'
 import { CartService } from 'src/app/addproduct.service';
@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './catalogs.component.html',
   styleUrls: ['./catalogs.component.css']
 })
+@Injectable()
 export class CatalogsComponent implements OnInit {
 
   listOfAllProducts = [];

@@ -1,8 +1,10 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 @Injectable({
     providedIn: 'root'
-})
+}
+)
 export class CartService {
     private addToCartUrl = "http://localhost:1236/cart"
     constructor(private http:HttpClient) { }
@@ -12,7 +14,7 @@ export class CartService {
          localStorage.getItem('token')); 
       }
 
-    addToCart(item) {
+    addToCart(item): Observable<any> {
         let headers = new HttpHeaders();
         let headersData = this.createAuthorizationHeader(headers);
         console.log("Token",localStorage.getItem('token'))
