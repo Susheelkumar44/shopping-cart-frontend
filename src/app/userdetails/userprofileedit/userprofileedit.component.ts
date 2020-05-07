@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, FormControl } from '@angular/forms';
 import { HttpClient, HttpResponse, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { GetUserDetails } from 'src/app/getuserdetails.service'
 
 
 @Component({
@@ -12,6 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 export class UserprofileeditComponent implements OnInit {
 
   updateForms: FormGroup;
+  public getUser;
   userData = {
     firstName: '',
     lastName: '',
@@ -28,25 +30,53 @@ export class UserprofileeditComponent implements OnInit {
   private editUserProfileURL = "http://localhost:1235/user"
 
   constructor(private http: HttpClient,
+    private getUserDetails: GetUserDetails,
     private toastrservice: ToastrService) { }
 
   createAuthorizationHeader(headers: HttpHeaders) {
     return headers.append('Authorization', 'Bearer ' +
       localStorage.getItem('token'));
   }
+  
+  async getUserDet() {
+    this.getUserDetails.getUserDetails().subscribe((data) => {
+      console.log("data", data)
+      // this.getUser.firstName = data.firstName
+  
+      this.setResult();
+      console.log("get user details from edit ", this.getUser)
+    })
+  }
 
+  setResult() {
+    console.log("data in set result", this.getUser)
+  }
 
   ngOnInit() {
-    this.updateForms = new FormGroup({
-      'firstname': new FormControl(null),
-      'lastname': new FormControl(null),
-      'phonenumber': new FormControl(null),
-      'addressLine': new FormControl(null),
-      'city': new FormControl(null),
-      'state': new FormControl(null),
-      'zipcode': new FormControl(null),
-      'password': new FormControl(null),
-    });
+    this.getUserDetails.getUserDetails().subscribe((data) => {
+      console.log("data", data)
+      console.log("get user details from edit ", this.getUser)
+      this.updateForms = new FormGroup({
+        'firstname': new FormControl(data.firstName),
+        'lastname': new FormControl(data.lastName),
+        'phonenumber': new FormControl(data.phone),
+        'addressLine': new FormControl(data.address.addressLine),
+        'city': new FormControl(data.address.city),
+        'state': new FormControl(data.address.state),
+        'zipcode': new FormControl(data.address.zip),
+        'password': new FormControl(null),
+      });
+    })
+    // this.updateForms = new FormGroup({
+    //   'firstname': new FormControl(null),
+    //   'lastname': new FormControl(null),
+    //   'phonenumber': new FormControl(null),
+    //   'addressLine': new FormControl(null),
+    //   'city': new FormControl(null),
+    //   'state': new FormControl(null),
+    //   'zipcode': new FormControl(null),
+    //   'password': new FormControl(null),
+    // });
   }
 
   async onSubmit() {

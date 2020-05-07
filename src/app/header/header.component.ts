@@ -52,7 +52,7 @@ export class HeaderComponent {
 
     onClick() {
         localStorage.setItem('searchParameter', this.searchParameter)
-        if ((localStorage.getItem('searchParameter')) == undefined) {
+        if ((localStorage.getItem('searchParameter')) === "undefined" || (localStorage.getItem('searchParameter')).length == 0) {
             console.log("Inside empty", localStorage.getItem('searchParameter'))
             this.router.navigate(['/homepage'])
         } 
