@@ -45,3 +45,22 @@
     border-radius: 0px 40px 40px 0px;
   }
   
+  /**/
+  @media only screen and (min-width:500px){
+    .navbar navbar-default{
+        width:60%
+    }
+}
+
+@media only screen and (min-width:576px){
+    .navbar navbar-default{
+        width:100%
+    }
+}
+
+@media only screen and (min-width:768px){
+    .navbar navbar-default{
+        width:110%
+    }
+}
+

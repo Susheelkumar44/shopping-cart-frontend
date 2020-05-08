@@ -23,8 +23,8 @@ export class UserprofileeditComponent implements OnInit {
       city: '',
       state: '',
       zip: ''
-    },
-    encryptedPassword: ''
+    }
+    //encryptedPassword: ''
   }
 
   private editUserProfileURL = "http://localhost:1235/user"
@@ -64,7 +64,7 @@ export class UserprofileeditComponent implements OnInit {
         'city': new FormControl(data.address.city),
         'state': new FormControl(data.address.state),
         'zipcode': new FormControl(data.address.zip),
-        'password': new FormControl(null),
+      //  'password': new FormControl(null),
       });
     })
     // this.updateForms = new FormGroup({
@@ -95,7 +95,7 @@ export class UserprofileeditComponent implements OnInit {
     this.userData.address.city = this.updateForms.value.city;
     this.userData.address.state = this.updateForms.value.state;
     this.userData.address.zip = this.updateForms.value.zipcode;
-    this.userData.encryptedPassword = this.updateForms.value.password;
+    //this.userData.encryptedPassword = this.updateForms.value.password;
 
     try {
       const data = await this.http.put(this.editUserProfileURL, this.userData, {
