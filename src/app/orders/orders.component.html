@@ -1,0 +1,41 @@
+<div class="container">
+    <h2 style="text-align: center;" class="lead">Your Order Details</h2>
+    <div class="row pt-5">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-4" >
+            <ng-container *ngFor="let orderDetails of allOrderDetails">
+            <div class="card shadow-lg p-3 mb-5 bg-white rounded" *ngFor = "let prod of orderDetails.product">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <br />
+                            <img class="img" src="{{prod.imageURL}}" style="height: 250px; width: 250px;" />
+                        </div>
+                    </div> <br />
+                    <div class="row">
+                        <div class="col-12">
+                            <blockquote class="blockquote">
+                                <p class="mb-0">Product Name:<span>{{prod.productName}}</span></p>
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            
+                                <p class="mb-0"><span>Quantity: {{prod.quantity}}</span></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12" style="text-align: right;">
+                    <span class="product-price" style="text-align: right;">
+                        <h3><strong>GrandTotal:
+                                {{orderDetails.grandTotal|currency:'Rs.'}}</strong></h3>
+                    </span>
+                </div>
+            </div>
+        </ng-container>
+        </div>
+    </div>
+</div>

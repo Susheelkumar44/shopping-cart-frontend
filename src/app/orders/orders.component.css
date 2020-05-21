@@ -1,0 +1,114 @@
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-left: 48px;
+}
+
+.fa {
+    border-style: solid;
+    border-width: thin;
+    border-spacing: 20px;
+    border-color: green;
+    
+}
+
+
+
+
+/* media Queries */
+
+@media only screen and (min-width:500px){
+    .img{
+        width:60%
+    }
+}
+
+@media only screen and (min-width:576px){
+    .img{
+        width:100%
+    }
+}
+
+@media only screen and (min-width:768px){
+    .img{
+        width:110%
+    }
+}
+.btn {
+    border-radius: 15.23rem;
+margin-left: 85px;
+margin-right: 10rem;
+
+  
+}
+
+.btn[_ngcontent-lco-c58]:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    margin-left:70%;
+  
+  
+}
+
+.ImgButton {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  .grandTotal {
+    color: #D10024;
+    font-size: 18px;
+  }
+
+  .product-price {
+    display: inline-block;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    color: #D10024;
+  }
+
+  .button {
+    border-radius: 4px;
+    background-color: red;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }

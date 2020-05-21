@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router'
 import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 
@@ -32,7 +33,9 @@ export class RegistrationComponent implements OnInit {
 
   private registrationUrl = "http://localhost:1235/user";  
 
-  constructor(private http: HttpClient, private toastrservice:ToastrService) { }
+  constructor(private http: HttpClient, 
+    private router: Router,
+    private toastrservice:ToastrService) { }
 
   async onSubmit() {
    this.userData.firstName = this.signUpForm.value.userData.firstName;
@@ -53,6 +56,7 @@ export class RegistrationComponent implements OnInit {
       this.isRegistered = true;
       // return this.registrationStatus = "Registration Successfull. Now continue shopping!!"
       this.onShowSuccessfullRegistration();
+      this.router.navigate(['/signin'])
     }
     catch (err) {
       console.log(err);

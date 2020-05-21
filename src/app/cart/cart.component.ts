@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { OrderService } from 'src/app/addorders.service';
 //import { Observable } from 'rxjs/observable';
 
 @Component({
@@ -13,6 +14,7 @@ export class CartComponent implements OnInit {
 
   constructor(private http: HttpClient,
     private router: Router,
+    private orderService: OrderService,
     private toastrservice: ToastrService) { }
 
   cartProductDetails;
@@ -21,6 +23,8 @@ export class CartComponent implements OnInit {
   private getCartDetailsURL = "http://localhost:1236/cart";
   private updateCartDetailsQuantityURL = "http://localhost:1236/cart/quantity"
   private deleteProductFromCartURL = "http://localhost:1236/cart";
+  private removeProductsFromCartURL = "http://localhost:1236/cart/del"
+
   createAuthorizationHeader(headers: HttpHeaders) {
     return headers.append('Authorization', 'Bearer ' +
       localStorage.getItem('token'));
@@ -112,6 +116,32 @@ export class CartComponent implements OnInit {
     catch (err) {
       console.log(err);
     }
+  }
+
+  async placeOrder(productDetails) {
+    let headers = new HttpHeaders();
+    let headersData = this.createAuthorizationHeader(headers);
+    console.log("Order Details: ", productDetails)
+    this.orderService.placeOrder(productDetails).subscribe(
+      (response) => {
+        console.log("value ", response)
+        console.log("data of order :", productDetails.products)
+        let dat = (productDetails.products).map(({productID}) => productID) 
+        console.log("Dat: ", dat)
+
+        let removeProductsFromCartAfterPost = {
+            "products" : dat
+        }
+        const data = this.http.put(this.removeProductsFromCartURL, removeProductsFromCartAfterPost,  {
+          headers : headersData
+      }).toPromise();
+      console.log("Call after deleting products ",data)
+      this.router.navigate(['/orderconfirmation'])
+      },
+      (error) => {
+        console.log("Error in posting orders ", error)
+      }
+    )
   }
 
   ngOnInit(): void {

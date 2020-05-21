@@ -22,13 +22,15 @@
             </ul>
             <div class="header-search">
             <ul class="nav navbar-nav">
-                <li><input type = "text" class="form-control" placeholder="Search Your Product Name Here" [(ngModel)] = "searchParameter" size="70"></li>
+                <li><input type = "text" class="form-control" placeholder="Search Your Product Name Here" [(ngModel)] = "searchParameter" size="50"></li>
                 <li><button class="btn btn-primary" style="background-color: #D10024;" (click) = "onClick()"><i class="fas fa-search"></i></button></li>
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
                 <li role="presentation" routerLinkActive="true"><a class="nav-link" routerLink="/cart"><i class="fa fa-shopping-cart"></i>
                     <strong>Cart</strong></a></li>
+                <li *ngIf="isUserLoggedIn" role="presentation" routerLinkActive="true"><a routerLink="/orderdetails"><i class="fas fa-truck-loading"></i>
+                    &nbsp;<strong>My Orders</strong></a></li>&nbsp;
                 <li *ngIf="!isUserLoggedIn" role="presentation" routerLinkActive="true"><a routerLink="/signin"><i class="fa fa-sign-in-alt"></i>
                     &nbsp;<strong>Sign In</strong></a></li>&nbsp;&nbsp;
                 <li *ngIf="!isUserLoggedIn" role="presentation" routerLinkActive="true"><a routerLink="/signup"><i class="fa fa-user-plus"></i>

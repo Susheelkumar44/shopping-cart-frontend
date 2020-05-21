@@ -10,6 +10,8 @@ import { UserdetailsComponent } from './userdetails/userdetails.component';
 import { UserprofileeditComponent } from './userdetails/userprofileedit/userprofileedit.component';
 import { SearchbycategoryComponent } from './catalogs/searchbycategory/searchbycategory.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { OrdersComponent } from './orders/orders.component';
+import { OrdersconfirmationComponent } from './orders/ordersconfirmation/ordersconfirmation.component';
 import { NgModule } from '@angular/core';
 import { AuthGuard } from './authguard.service';
 
@@ -54,6 +56,14 @@ const appRoutes: Routes = [
     {
         path: "searchbycategory", 
         component: SearchbycategoryComponent
+    },
+    {
+        path: "orderdetails", 
+        component: OrdersComponent
+    },
+    {
+        path: "orderconfirmation", 
+        component: OrdersconfirmationComponent
     },
     {
         path: "**", 

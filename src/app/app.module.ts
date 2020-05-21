@@ -24,6 +24,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AppRoutingModule } from './approuting.module';
 import { AuthGuard } from './authguard.service';
 import { CartService } from './addproduct.service';
+import { OrdersComponent } from './orders/orders.component';
+import { OrdersconfirmationComponent } from './orders/ordersconfirmation/ordersconfirmation.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { CartService } from './addproduct.service';
     UserprofileeditComponent,
     DropdownDirective,
     SearchbycategoryComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    OrdersComponent,
+    OrdersconfirmationComponent
   ],
   imports: [
     BrowserModule,
